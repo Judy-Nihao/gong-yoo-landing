@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Landing Page</title>
+    <!-- Magnific Popup core CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"> 
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jQuery-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- GSAP JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+
+    <!-- custom JS -->
+    <script src="all.js" defer></script>
+</head>
+<body>
+    <div class="hero-img">
+        <img src="images/tom-ford-02.jpg" alt="">
+    </div>
+    <div class="container">
+        <div class="cols">
+            <div class="col col-left">
+                <div class="copy">
+                    <header class="header">TOM FORD Fragrance Attaché</header>
+                    <div class="sub-header">Gong Yoo</div>
+                    <div class="img-wrapper">
+                        <img src="images/gong-yoo-tom-ford-01.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        Gong Yoo is the new face of the Tom Ford White Suede Collection! 
+                        <br>
+                        <br>
+                        White Suede
+                        <br>
+                        a charming musk-inspired scent infused with elegant spices and radiant amber.
+                    </div>
+                    <footer class="footer">
+                        <div class="arrow">
+                        </div>
+                        <a class="footer-text popup-youtube" href="https://www.youtube.com/watch?v=7BSXsrxsHZc">See Gong Yoo on Youtube</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="col col-right">
+                <header class="header">
+                    Tom Ford<br> 
+                    White Suede<br>
+                    Collection<br>
+                    PRIVATE BLEND
+                </header>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-items">
+                <div class="nav-item"><a href="#">FRAGRANCE</a></div>
+                <div class="nav-item"><a href="#">Features</a></div>
+            </div>
+            <div class="nav-items">
+                <div class="nav-item"><a href="#" id="logo">TOM FORD BEAUTY</a></div>
+                
+            </div>
+            <div class="nav-items">
+                <div class="nav-item"><a href="#">Price</a></div>
+                <div class="nav-item"><a href="https://thebeaulife.co/beauty-news/gong-yoo-tom-ford-white-suede-singapore" target="_blank">News</a></div>
+            </div>
+        </nav>
+
+        <!-- 畫面初始載入掀開 -->
+        <div class="loader-text-wrapper block">
+            <h1 class="loader-text">Gong Yoo × Tom Ford</h1>
+        </div>
+        <div class="revealer"></div>
+        
+        <!-- 載入的漸層斜彩條 -->
+        <!-- <div class="pre-loader block">
+            <div class="loader-wrapper">
+                <div class="loader"></div>
+            </div>
+        </div> -->
+    </div>
+</body>
+</html>

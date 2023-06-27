@@ -1,3 +1,3 @@
-# Gong Yoo Tom Ford Prefume Landing Page
+# Gong Yoo Tom Ford Perfume Landing Page
 
-實作：
+實作：https://judy-nihao.github.io/gong-yoo-landing
