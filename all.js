@@ -18,9 +18,10 @@ const documentHeight = () => {
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
    }
 
-   if(window.innerHeight < 768){
+
+if(window.innerHeight < 768){
     documentHeight();
-   }
+   };
 
 
 
@@ -34,14 +35,30 @@ window.addEventListener("resize", function(){
 });
 
 
+//用螢幕寬度判斷電腦板或是行動版
+window.addEventListener("load", function(event) {
+
+    if(window.innerWidth < 992){
+        landingMobile();
+        console.log("平板")
+       }else{
+        landingDesktop();
+       }
+});
+
+
+
 // 預設大家的 duration 都是 1 秒
 // 但還是可以在單個身上添加獨立的 duration，那就會以單個身上的為主，不吃 default
 const timeline = gsap.timeline({ defaults: { duration:1 } });
 
+
+// 電腦版動態
 // 文字由下往上淡入
 // revelaer 由左往右長出寬度後＋再由左往右移出
 // loader-text-wrapper 在 revealer 一移出後就立刻消失，露出底下的網頁內容，沒有延遲。
-timeline
+function landingDesktop(){
+    timeline
 .from(".loader-text",{
     y: "25",
     opacity: "0",
@@ -75,8 +92,48 @@ timeline
     x: "-20",
     opacity: "0",
     ease: "power3.inOut"
+},"<1")}
+
+
+// 行動版動態文字改上浮
+function landingMobile(){
+    timeline
+.from(".loader-text",{
+    y: "25",
+    opacity: "0",
+    ease: "power3.inOut",
+})
+.from(".revealer", {
+    width: "0",
+    ease: "power3.inOut",
+}, "<0.5")
+.to(".revealer", {
+    left: "100%",
+    display: "none",
+    ease: "power3.inOut",
+}, '< 0.75')
+.to(".loader-text-wrapper", 0.5, {
+    opacity: "0",
+    display: "none",
+    ease: "power3.inOut"
+})
+.from(".col-left", 1.5, {
+    y: "50%",
+    opacity: "0",
+    ease: "power3.inOut"
+}, 2)
+.from(".col-left .copy > *", {
+    y: "10%",
+    opacity: "0",
+    ease: "power3.inOut",
+    stagger: 0.25
+},"<0.75")
+.from(".col-right .header", {
+    y: "10%",
+    opacity: "0",
+    ease: "power3.inOut"
 },"<1")
+}
 
-
-// < 0.5 代表「相對於前一個」動畫延遲 delay 0.5秒
-// 測試發現要注意 "<0.5" 引號內左右兩側，不可以有多餘空白，否則會失效。
+// "<0.75" 代表「相對於前一個」動畫延遲 delay 0.5秒
+// 測試發現要注意 "<0.75" 引號內左右兩側，不可以有多餘空白，否則會失效。
